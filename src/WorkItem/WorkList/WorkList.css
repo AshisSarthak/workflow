@@ -1,0 +1,50 @@
+.work-list {
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px #333;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input {
+  border: 1px solid #999;
+  height: 30px;
+  margin: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.content {
+  height: 100px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.status {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  right: -15px;
+  top: -15px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.status::before {
+  content: "\2713";
+  display: inline-block;
+  color: white;
+}
+
+.progress {
+  background-color: lightskyblue;
+}
+
+.completed {
+  background-color: green;
+}
