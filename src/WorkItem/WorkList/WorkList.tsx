@@ -6,7 +6,7 @@ import { changeStatus } from "../WorkList/workListAction";
 export type workListProps = {
   item: any;
   statusClass: string;
-  changeStatus: any;
+  changeStatus: Function;
 };
 
 export class workList extends React.Component<workListProps> {

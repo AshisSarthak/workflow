@@ -1,0 +1,25 @@
+.wflist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.wflist-title {
+  height: 20px;
+}
+
+select {
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.createwf-button {
+  background-color: green;
+  width: 200px;
+  color: white;
+}

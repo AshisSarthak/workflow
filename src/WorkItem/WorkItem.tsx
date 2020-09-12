@@ -2,17 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import WorkList from "./WorkList/WorkList";
 import "./WorkItem.css";
-import { STATUS } from "../workTypes";
+import { STATUS, WorkFlowItems, WorkFlows } from "../workTypes";
 import WorkFlow from "./WorkFlow/WorkFlow";
 
 export type WorkItemProps = {
-  currentWorkFlow: any;
+  currentWorkFlow: WorkFlows;
+  showWFItemScreen: boolean;
 };
 
 export class workItem extends React.Component<WorkItemProps> {
   componentDidMount() {}
 
-  getClassname = (item: any) => {
+  getClassname = (item: WorkFlowItems) => {
     switch (item.status) {
       case STATUS.INPROGRESS:
         return "status progress";
@@ -24,26 +25,27 @@ export class workItem extends React.Component<WorkItemProps> {
   };
 
   render() {
-    const { currentWorkFlow } = this.props;
-    const items = currentWorkFlow.items;
-    return (
+    const { currentWorkFlow, showWFItemScreen } = this.props;
+    const items = currentWorkFlow && currentWorkFlow.items;
+    return showWFItemScreen ? (
       <div className="workItem">
         <header className="header-item">
           <WorkFlow currentWorkFlow={currentWorkFlow} />
         </header>
         <section className="items">
           {items &&
-            items.map((item: any) => (
+            items.map((item: WorkFlowItems) => (
               <WorkList item={item} statusClass={this.getClassname(item)} />
             ))}
         </section>
       </div>
-    );
+    ) : null;
   }
 }
 
 const mapStateToProps = (state: any) => ({
   currentWorkFlow: state.items.currentWorkFlow,
+  showWFItemScreen: state.items.showWFItemScreen,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({});

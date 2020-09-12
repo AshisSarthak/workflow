@@ -1,0 +1,63 @@
+.work-list {
+  max-width: 20%;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 15px;
+  position: relative;
+}
+
+.flow-title {
+  width: 80%;
+  margin-top: 20px;
+  text-indent: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 40px;
+  outline: none;
+}
+
+.status-flow {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  right: -15px;
+  top: -15px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.status-flow::before {
+  display: inline-block;
+  color: white;
+}
+
+.wf-status {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wf-item-status {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  right: -15px;
+  top: -15px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.wf-item-status::before {
+  content: "\2713";
+  display: inline-block;
+  color: white;
+}
+
+.wf-details {
+  cursor: pointer;
+  margin-top: 30px;
+  color: blue;
+}

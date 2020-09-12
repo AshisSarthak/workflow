@@ -2,6 +2,7 @@ import React from "react";
 
 import "./App.css";
 import Header from "./Header/Header";
+import WorkFlowList from "./WorkFlowList/WorkFlowList";
 import WorkItem from "./WorkItem/WorkItem";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <WorkItem />
+      <WorkFlowList />
     </div>
   );
 }
